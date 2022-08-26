@@ -1,0 +1,10 @@
+{
+    "schemaVersion": 2,
+    "dockerfileLines": [
+        "FROM webdevops/php-nginx:7.4-alpine",
+        "ENV WEB_DOCUMENT_ROOT /app/public",
+        "COPY ./ /app",
+        "COPY ./php.ini opt/docker/etc/php/php.ini",
+        "RUN composer install -d /app"
+    ]
+}
